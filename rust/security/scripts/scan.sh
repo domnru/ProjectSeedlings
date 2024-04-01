@@ -1,0 +1,2 @@
+cargo geiger
+cargo audit

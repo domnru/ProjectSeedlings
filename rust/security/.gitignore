@@ -1,0 +1,8 @@
+*
+!*/
+             
+# whitelist
+!.gitignore
+!Cargo.toml
+!src/**
+!scripts/**
