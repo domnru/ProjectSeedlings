@@ -1,0 +1,43 @@
+[package]
+name = "rustls"
+version = "0.1.0"
+edition = "2021"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+overflow-checks = true
+opt-level = 3
+
+[dependencies]
+### Actix
+actix-web = { version = "4", features = ["rustls-0_22"] }
+
+### API
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+### Doc
+# Doc -> OpenAPI
+utoipa = { version = "4.2.0", features = ["actix_extras"] }
+utoipa-swagger-ui = { version = "6.0.0", features = ["actix-web"] }
+
+### Security
+# Security -> Crypto
+ring = "0.17"
+pqc_kyber = "0.7.1"
+# Security -> Authentication
+oauth2 = "4.4"
+argon2 = "0.5"
+jsonwebtoken = "9.3.0"
+# Security -> Memory Safety
+secstr = "0.5"
+zeroize = "1.7.0"
+# Security -> TLS Security
+rustls = "0.22"
+rustls-pemfile = "2"
+# Security -> Validation
+ammonia = "4.0.0"
+untrusted = "0.9"
